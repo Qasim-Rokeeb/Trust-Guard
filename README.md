@@ -53,6 +53,14 @@
 - **TypeScript** – Type safety and scalability
 - **Chart.js or Recharts** – (Optional) for data visualization
 
+---
+
+## 🌐 Deployment
+
+This project is deployed on [Vercel](https://vercel.com/) — [Live Link](https://w-trust-guard.vercel.app)
+
+---
+
 ### Backend (Lightweight)
 - **Mock API** (JSON files or in-memory logic via `/lib`)
 - Optional: **Node.js + Express** if full backend is needed
