@@ -6,6 +6,14 @@
 **Live URL:** [Add if deployed]  
 **Tech Stack:** Next.js (App Router), React, Tailwind CSS, TypeScript, Axios, Node.js/Mock API
 
+
+## Team Members
+- [Qasim Rokeeb]
+- [Idowu Blessing]
+- [Adekunle Bolaji]
+- [Edore Precious]
+- [Ogowale Covenant]
+  
 ---
 
 ## 📌 Overview
