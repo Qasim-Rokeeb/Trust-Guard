@@ -35,7 +35,7 @@ export function Sidebar({ activeView, onViewChange, isOpen, onClose }: SidebarPr
       {/* Sidebar */}
       <div
         className={cn(
-          "fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-50 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:z-auto",
+          "fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 z-50 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:z-40 lg:h-screen",
           isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >

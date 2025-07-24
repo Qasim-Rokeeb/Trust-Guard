@@ -17,7 +17,7 @@ interface HeaderProps {
 
 export function Header({ onMenuClick }: HeaderProps) {
   return (
-    <header className="bg-white border-b border-gray-200 px-4 lg:px-8 py-4">
+    <header className="bg-white border-b border-gray-200 px-4 lg:px-8 py-4 lg:fixed lg:top-0 lg:left-0 lg:right-0 lg:z-30">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="sm" onClick={onMenuClick} className="lg:hidden">

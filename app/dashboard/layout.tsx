@@ -27,7 +27,7 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-gray-50">
       <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
-      <div className="flex">
+      <div className="flex lg:pt-16">
         <Sidebar
           activeView={getActiveView()}
           onViewChange={() => {}} // Navigation handled by router now
