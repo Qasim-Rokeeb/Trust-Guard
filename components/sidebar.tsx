@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Users, AlertTriangle, BarChart3, Settings, X } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 interface SidebarProps {
   activeView: string
@@ -12,13 +13,20 @@ interface SidebarProps {
 }
 
 const navigation = [
-  { id: "overview", name: "User Overview", icon: Users },
-  { id: "alerts", name: "Alert Center", icon: AlertTriangle },
-  { id: "analytics", name: "Analytics", icon: BarChart3 },
-  { id: "settings", name: "Settings", icon: Settings },
+  { id: "overview", name: "User Overview", icon: Users, href: "/dashboard" },
+  { id: "alerts", name: "Alert Center", icon: AlertTriangle, href: "/dashboard/alerts" },
+  { id: "analytics", name: "Analytics", icon: BarChart3, href: "/dashboard/analytics" },
+  { id: "settings", name: "Settings", icon: Settings, href: "/dashboard/settings" },
 ]
 
 export function Sidebar({ activeView, onViewChange, isOpen, onClose }: SidebarProps) {
+  const router = useRouter()
+
+  const handleNavigation = (href: string) => {
+    router.push(href)
+    onClose()
+  }
+
   return (
     <>
       {/* Mobile overlay */}
@@ -51,10 +59,7 @@ export function Sidebar({ activeView, onViewChange, isOpen, onClose }: SidebarPr
                     ? "bg-purple-600 text-white hover:bg-purple-700"
                     : "text-gray-700 hover:bg-gray-100",
                 )}
-                onClick={() => {
-                  onViewChange(item.id)
-                  onClose()
-                }}
+                onClick={() => handleNavigation(item.href)}
               >
                 <Icon className="h-5 w-5" />
                 <span>{item.name}</span>

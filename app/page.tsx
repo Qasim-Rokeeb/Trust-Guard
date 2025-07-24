@@ -1,15 +1,21 @@
 "use client"
 
 import { useState } from "react"
-import { Dashboard } from "@/components/dashboard"
+import { useRouter } from "next/navigation"
 import { LoginForm } from "@/components/login-form"
 
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const router = useRouter()
 
-  if (!isAuthenticated) {
-    return <LoginForm onLogin={() => setIsAuthenticated(true)} />
+  const handleLogin = () => {
+    setIsAuthenticated(true)
+    router.push("/dashboard")
   }
 
-  return <Dashboard />
+  if (isAuthenticated) {
+    return null // Will redirect to dashboard
+  }
+
+  return <LoginForm onLogin={handleLogin} />
 }
